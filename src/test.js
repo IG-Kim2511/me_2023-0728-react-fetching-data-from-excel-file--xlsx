@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import * as XLSX from 'xlsx'; 
+import * as XLSX from 'xlsx';
 
 function ExcelDataFetcher() {
   const [data, setData] = useState({});
@@ -13,9 +13,20 @@ function ExcelDataFetcher() {
       const workbook = XLSX.read(data, { type: 'binary' });
       const sheetName = workbook.SheetNames[0];
       const worksheet = workbook.Sheets[sheetName];
-      const excelData = XLSX.utils.sheet_to_json(worksheet, { header: 1 });
+      const excelData = XLSX.utils.sheet_to_json(worksheet, { header: 1, defval: null, raw: false });
 
-      setData(excelData);
+      // Extract keys from the first row (header)
+      const keys = excelData[0];
+
+      // Construct the data object
+      const formattedData = excelData.slice(1).map((row) => {
+        return row.reduce((acc, value, index) => {
+          acc[keys[index]] = value;
+          return acc;
+        }, {});
+      });
+
+      setData(formattedData);
     };
 
     reader.readAsBinaryString(file);
