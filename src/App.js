@@ -1,6 +1,7 @@
 
 
 import ExcelDataFetcher from './components/ExcelDataFetcher';
+import JsonDataFetching from './components/JsonDataFetching';
 
 function App() {
   return (
@@ -8,6 +9,8 @@ function App() {
  
 
       <ExcelDataFetcher/>
+
+      <JsonDataFetching/>
     </div>
   );
 }

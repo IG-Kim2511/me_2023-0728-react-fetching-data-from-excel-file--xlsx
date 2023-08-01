@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import * as XLSX from 'xlsx';
 
-import dataStock from "../assets/data.js";
 
 function ExcelDataFetcher() {
-  console.log(dataStock)
+
   const [data, setData] = useState({});
 
   const handleFileChange = (e) => {
@@ -40,14 +39,7 @@ function ExcelDataFetcher() {
       <input type="file" onChange={handleFileChange} />
       <pre>{JSON.stringify(data, null, 2)}</pre>
 
-      <h1>dataStock List</h1>
-      <ul>
-        {dataStock.map(({ Date, Open,High,Low,Volume, "Close/Last": closeLast }) => (
-          <li>
-           date: {Date}  open: {Open}  closeLast:{closeLast} High: {High} Low: {Low} Volume: {Volume} 
-          </li>
-        ))}
-      </ul>
+ 
     </div>
   );
 }
