@@ -42,9 +42,9 @@ function ExcelDataFetcher() {
 
       <h1>dataStock List</h1>
       <ul>
-        {dataStock.map((user) => (
+        {dataStock.map(({ Date, Open,High,Low,Volume, "Close/Last": closeLast }) => (
           <li>
-            {user.Date} {user.Open} {user.[Close/Last]} {user.High} {user.Low} {user.Volume} 
+           date: {Date}  open: {Open}  closeLast:{closeLast} High: {High} Low: {Low} Volume: {Volume} 
           </li>
         ))}
       </ul>
