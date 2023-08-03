@@ -1,0 +1,30 @@
+/* App.css */
+.tab-page {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+
+  }
+  
+  .tabs {
+    display: flex;    
+    justify-content: space-around;
+    margin-bottom: 10px;
+  }
+  
+  .tab {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .tab.active {
+    background-color: #f0f0f0;
+  }
+  
+  .tab-content {
+    padding: 10px;
+  }
+  
