@@ -12,6 +12,7 @@ const TabPage = () => {
   return (
     <div className="tab-page">
       <div className="tabs">
+    
         <Tab label="Tab 1" index={0} activeTabIndex={activeTabIndex} onClick={handleTabClick} />
         <Tab label="Tab 2" index={1} activeTabIndex={activeTabIndex} onClick={handleTabClick} />
         <Tab label="Tab 3" index={2} activeTabIndex={activeTabIndex} onClick={handleTabClick} />
@@ -25,6 +26,7 @@ const TabPage = () => {
   );
 };
 
+// props
 const Tab = ({ label, index, activeTabIndex, onClick }) => {
     const isActive = index === activeTabIndex;
   

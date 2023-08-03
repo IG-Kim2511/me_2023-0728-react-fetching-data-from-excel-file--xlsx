@@ -1,7 +1,6 @@
 
 
 import ExcelDataFetcher from './components/ExcelDataFetcher';
-import JoinUp from './components/JoinUp';
 import JsonDataFetching from './components/JsonDataFetching';
 import TabPage from './components/TabPage/TabPage';
 
@@ -11,9 +10,8 @@ function App() {
  
 
 
-    <TabPage/>
+      <TabPage/>
 
-      <JoinUp/>
 
       <ExcelDataFetcher/>
 

@@ -8,13 +8,15 @@ import dataStock from "../assets/data.js";
 const JsonDataFetching = () => {
     console.log(dataStock)
 
+    //🍚slice
     const dataStockSlice = dataStock.slice(0, 10);
 
 
   return (
     <div>
     
-        <h1>dataStock List 처음 10개 데이터만 가져옴 </h1>
+        <h1>Fetching Data from Excel Automatically</h1>
+        <h3> 처음 10개 데이터만 가져옴  </h3>
         <ul>
         {dataStockSlice.map(({ Date, Open,High,Low,Volume, "Close/Last": closeLast }) => (
             <li>
